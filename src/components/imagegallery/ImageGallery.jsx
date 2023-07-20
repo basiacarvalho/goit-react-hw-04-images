@@ -3,8 +3,7 @@ import css from './ImageGallery.module.css';
 import { ImageGalleryItem } from 'components/imagegalleryitem/ImageGalleryItem';
 import { Button } from 'components/button/Button';
 import { Loader } from 'components/loader/Loader';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export const ImageGallery = ({
   searchQuery,
