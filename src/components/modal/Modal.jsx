@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import css from './Modal.module.css';
 
 export const Modal = ({ hideModal, picture }) => {
-  let overlay = null;
+  const overlay = useRef();
 
   const handleKeyDown = evt => {
     if (evt.keyCode === 27) {
@@ -11,14 +11,12 @@ export const Modal = ({ hideModal, picture }) => {
   };
 
   useEffect(() => {
-    overlay.focus();
+    overlay.current.focus();
   }, []);
 
   return (
     <div
-      ref={input => {
-        overlay = input;
-      }}
+      ref={overlay}
       tabIndex={0}
       className={css.overlay}
       onClick={hideModal}
