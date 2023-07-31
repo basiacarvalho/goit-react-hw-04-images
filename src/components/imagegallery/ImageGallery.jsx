@@ -4,6 +4,7 @@ import { ImageGalleryItem } from 'components/imagegalleryitem/ImageGalleryItem';
 import { Button } from 'components/button/Button';
 import { Loader } from 'components/loader/Loader';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export const ImageGallery = ({
   searchQuery,
@@ -87,4 +88,11 @@ export const ImageGallery = ({
       {hasNextPage && <Button showNextPage={showNextPage} />}
     </>
   );
+};
+
+ImageGallery.propTypes = {
+  searchQuery: PropTypes.string,
+  currentPage: PropTypes.number,
+  showLargePicture: PropTypes.func,
+  showNextPage: PropTypes.func,
 };

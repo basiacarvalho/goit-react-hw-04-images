@@ -1,4 +1,5 @@
 import css from './SearchBar.module.css';
+import PropTypes from 'prop-types';
 
 export const SearchBar = ({ handleSubmit }) => {
   const searchImages = evt => {
@@ -23,4 +24,8 @@ export const SearchBar = ({ handleSubmit }) => {
       </form>
     </header>
   );
+};
+
+SearchBar.propTypes = {
+  handleSubmit: PropTypes.func,
 };

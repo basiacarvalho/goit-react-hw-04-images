@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import css from './Modal.module.css';
+import PropTypes from 'prop-types';
 
 export const Modal = ({ hideModal, picture }) => {
   const overlay = useRef();
@@ -27,4 +28,9 @@ export const Modal = ({ hideModal, picture }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  hideModal: PropTypes.func,
+  picture: PropTypes.string,
 };
